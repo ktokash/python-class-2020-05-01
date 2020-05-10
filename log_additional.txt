@@ -1,0 +1,12 @@
+
+
+
+cisco3#
+cisco3#terminal length 0
+cisco3#terminal width 511
+cisco3#
+cisco3#delete flash:/cisco_file.txt
+Delete filename [cisco_file.txt]? 
+Delete bootflash:/cisco_file.txt? [confirm]y
+cisco3#
+cisco3#

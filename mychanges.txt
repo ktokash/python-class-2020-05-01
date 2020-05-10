@@ -1,0 +1,3 @@
+logging buffered 10000
+clock timezone PST -7 0
+
