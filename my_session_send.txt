@@ -1,0 +1,40 @@
+
+
+cisco3#
+cisco3#
+cisco3#terminal length 0
+cisco3#terminal width 511
+cisco3#
+cisco3#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+cisco3(config)#
+cisco3(config)#ip name-server 1.1.1.1
+cisco3(config)#
+cisco3(config)#end
+cisco3#
+cisco3#
+cisco3#
+cisco3#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+cisco3(config)#
+cisco3(config)#ip name-server 1.0.0.1
+cisco3(config)#
+cisco3(config)#end
+cisco3#
+cisco3#
+cisco3#
+cisco3#
+cisco3#
+cisco3#
+cisco3#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+cisco3(config)#
+cisco3(config)#ip domain-lookup
+cisco3(config)#
+cisco3(config)#end
+cisco3#
+cisco3#
+cisco3#
+cisco3#
+cisco3#
+cisco3#exit
