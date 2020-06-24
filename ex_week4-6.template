@@ -1,0 +1,16 @@
+# What you want PRINTED goes in this regex, as in what gets searched for
+Value Filldown ROUTER_ID ([0-9\.]+)
+Value Filldown LOCAL_AS (\d+)
+Value NEIGHBOR ([0-9\.]+)
+Value REMOTE_AS (\d{4,6})
+Value UP_DOWN (\S+)
+Value STATE_PFXRCD (\S+)
+
+Start
+  ^BGP router identifier ${ROUTER_ID}, local AS number ${LOCAL_AS}\s*$$ -> BGP_SUM
+#  ^Neighbor.*State.PfxRcd\s.*$$-> BGP_SUM
+
+BGP_SUM
+  ^${NEIGHBOR}\s+\d+\s+${REMOTE_AS}\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+${UP_DOWN}\s+${STATE_PFXRCD} -> Record
+
+EOF

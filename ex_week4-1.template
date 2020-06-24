@@ -1,0 +1,17 @@
+Value PORT_NAME (\S+)
+Value STATUS (\S+)
+Value VLAN (\S+)
+Value DUPLEX (\S+)
+Value SPEED (\S+)
+Value PORT_TYPE (\S+)
+
+# State machine, separator blank line, starts with 'Start'
+# # Write a match to catch a line that begins with "Port", and ends with "Type"
+# # with anything in between. Also accounts for 0 or more trailing whitespaces
+Start
+  ^Port.*Type\s*$$ -> PORTS
+
+PORTS
+  #^${PORT_NAME}\s+${STATUS}\s+${VLAN}\s+${DUPLEX}\s+${SPEED}\s+${PORT_TYPE}\s+$$ -> Record
+  ^${PORT_NAME}\s+${STATUS}\s+${VLAN}\s+${DUPLEX}\s+${SPEED}\s+${PORT_TYPE}\s*$$ -> Record
+

@@ -1,0 +1,15 @@
+Value INTERFACE_NAME (^\S+thernet\S+)
+Value LINE_STATUS (up|down)
+Value ADMIN_STATE (up|down)
+Value MAC (\w\w\w\w\.\w\w\w\w\.\w\w\w\w)
+#Value MAC ([0-9a-f]{4}\.[0-9a-f]{4}\.[0-9a-f]{4})
+Value MTU (\d+)
+Value DUPLEX ((full|half)-duplex)
+Value SPEED (\d+)
+
+Start
+  ^${INTERFACE_NAME}\s+\S+\s+${LINE_STATUS}
+  ^admin state is ${ADMIN_STATE}
+  ^  Hardware.*address: ${MAC}\s
+  ^  MTU ${MTU} bytes
+  ^  ${DUPLEX}.*, ${SPEED} Mb/s -> Record

@@ -1,0 +1,11 @@
+Value MAC_ADDRESS (\w{2}\:\w{2}\:\w{2}\:\w{2}\:\w{2}\:\w{2})
+Value IP_ADRRESS (\S+)
+Value NAME (\S+)
+Value INTERFACE_NAME (\S+)
+
+Start
+  ^MAC Address.*Flags\s*$$ -> PORTS
+
+PORTS
+  ^${MAC_ADDRESS}\s+${IP_ADRRESS}\s+${NAME}\s+${INTERFACE_NAME} -> Record
+

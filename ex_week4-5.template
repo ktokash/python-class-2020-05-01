@@ -1,0 +1,11 @@
+Value DEVICE_ID (\S+)
+Value LOCAL_INT (\S+)
+Value CAPABILITY (\S+)
+Value PORT_ID (\S+)
+
+Start
+  ^Capability.*:\s*$$ -> PORTS
+
+PORTS
+  ^${DEVICE_ID}\s+${LOCAL_INT}\s+\d+\s+${CAPABILITY}\s+${PORT_ID} -> Record
+
